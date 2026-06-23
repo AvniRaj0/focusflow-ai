@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFlow - AI Coach</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">FocusFlow</div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item">
+                    <span class="icon">🏠</span> Dashboard
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">📝</span> Tasks
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">🔥</span> Habits
+                </a>
+                <a href="#" class="nav-item active">
+                    <span class="icon">🤖</span> AI Coach
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1>AI COACH</h1>
+            </header>
+
+            <div class="coach-grid">
+                
+                <div class="grid-col-left">
+                    
+                    <div class="card ai-plan-card">
+                        <h2 class="card-title text-center">
+                            <span class="icon">🤖</span> Today's AI Plan
+                        </h2>
+                        
+                        <div class="schedule-list">
+                            <div class="schedule-item">
+                                <span class="time">6:00 PM</span>
+                                <span class="task">DSA (3 Questions)</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">7:00 PM</span>
+                                <span class="task">DBMS Schema</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">8:00 PM</span>
+                                <span class="task">Hackathon Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card reschedule-card text-center">
+                        <h2 class="card-title warning-title">
+                            ⚠️ MISSED SOMETHING?
+                        </h2>
+                        <button class="btn-primary btn-large">Reschedule</button>
+                    </div>
+                </div>
+
+                <div class="grid-col-right">
+                    
+                    <div class="card info-card">
+                        <h2 class="card-title">
+                            <span class="icon">🧠</span> AI Reasoning
+                        </h2>
+                        <ul class="bullet-list">
+                            <li>DBMS due in 3 days</li>
+                            <li>DSA streak must continue</li>
+                            <li>Hackathon has lower urgency</li>
+                        </ul>
+                    </div>
+
+                    <div class="card info-card">
+                        <h2 class="card-title">
+                            <span class="icon">✨</span> Recommendations
+                        </h2>
+                        <ul class="bullet-list">
+                            <li>Focus on DBMS today</li>
+                            <li>Reduce distractions</li>
+                            <li>Keep DSA streak alive</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</body>
+</html>

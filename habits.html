@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFlow - Habits</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">FocusFlow</div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item">
+                    <span class="icon">🏠</span> Dashboard
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">📝</span> Tasks
+                </a>
+                <a href="#" class="nav-item active">
+                    <span class="icon">🔥</span> Habits
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="icon">🤖</span> AI Coach
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Habits</h1>
+            </header>
+
+            <section class="card insights-banner">
+                <div class="insights-banner-title">
+                    <span class="icon">🤖</span> Habit Insights
+                </div>
+                <div class="insights-grid">
+                    <div class="insight-bubble">
+                        <p class="insight-highlight">• DSA streak is strong.</p>
+                        <p class="insight-text"><strong>Recommendation:</strong> Increase target from 3 → 4 questions.</p>
+                        <div class="insight-meta">Confidence: <span class="badge-high">High</span></div>
+                    </div>
+                    <div class="insight-bubble">
+                        <p class="insight-highlight">• Java completion has dropped for 3 consecutive days.</p>
+                        <p class="insight-text"><strong>Recommendation:</strong> Reduce daily target from 45 → 30 minutes.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="habits-grid">
+                
+                <div class="card habit-card">
+                    <div class="habit-header">
+                        <h2>DSA - 🔥 10 Day Streak</h2>
+                    </div>
+                    
+                    <div class="habit-details">
+                        <div class="detail-row">
+                            <span class="label">Goal:</span>
+                            <span class="value">3 Questions Daily</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Today's Target:</span>
+                            <span class="value">3 Questions</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Completion:</span>
+                            <span class="value completion-value">70%</span>
+                        </div>
+                        <div class="detail-row ai-suggestion-row">
+                            <span class="label">AI Suggestion:</span>
+                            <span class="value suggestion-text">Maintain current pace</span>
+                        </div>
+                    </div>
+
+                    <div class="habit-actions">
+                        <button class="btn-edit">EDIT</button>
+                        <button class="btn-delete">DELETE</button>
+                    </div>
+                </div>
+
+                <div class="card habit-card">
+                    <div class="habit-header">
+                        <h2>Java - 🔥 5 Day Streak</h2>
+                    </div>
+                    
+                    <div class="habit-details">
+                        <div class="detail-row">
+                            <span class="label">Goal:</span>
+                            <span class="value">30 Minutes Daily</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Today's Target:</span>
+                            <span class="value">45 Minutes</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Completion:</span>
+                            <span class="value completion-value">50%</span>
+                        </div>
+                        <div class="detail-row ai-suggestion-row">
+                            <span class="label">AI Suggestion:</span>
+                            <span class="value suggestion-text">Increase intensity</span>
+                        </div>
+                    </div>
+
+                    <div class="habit-actions">
+                        <button class="btn-edit">EDIT</button>
+                        <button class="btn-delete">DELETE</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="bottom-actions">
+                <button class="btn-primary btn-large">ADD HABIT</button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
