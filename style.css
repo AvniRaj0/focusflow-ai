@@ -1044,9 +1044,27 @@ body {
     background:#F8F4FF;
 }
 
-.ff-close{
+.ff-close
+#saveTaskBtn.ff-btn-action {
 
-    font-size:28px;
-    cursor:pointer;
-    align-self:flex-end;
+    display: block;
+
+    width: 220px !important;
+    height: 52px !important;
+
+    margin: 10px auto 0;
+
+    border-radius: 14px;
+
+    font-size: 16px !important;
+    font-weight: 700;
+
+}
+
+#saveTaskBtn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 12px 28px rgba(139,92,246,.35);
+
 }

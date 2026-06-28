@@ -25,6 +25,48 @@ addTaskBtn.addEventListener("click", function () {
 closeTaskModal.addEventListener("click", function () {
     taskModal.style.display = "none";
 });
+// make the existing cards editable and deletable
+function attachTaskEvents(taskCard) {
+
+    const deleteBtn = taskCard.querySelector(".ff-btn-delete");
+    const editBtn = taskCard.querySelector(".ff-btn-edit");
+
+    deleteBtn.addEventListener("click", function () {
+
+        const confirmDelete = confirm("Are you sure you want to delete this task?");
+
+        if (confirmDelete) {
+            taskCard.remove();
+        }
+
+    });
+
+    editBtn.addEventListener("click", function () {
+
+        editingTask = taskCard;
+
+        document.getElementById("taskName").value =
+            taskCard.querySelector(".ff-task-card-title").innerText;
+
+        document.getElementById("taskDate").value =
+            taskCard.querySelectorAll(".ff-m-val")[0].innerText;
+
+        document.getElementById("taskPriority").value =
+            taskCard.querySelectorAll(".ff-m-val")[1].innerText;
+
+        document.getElementById("taskTime").value =
+            taskCard.querySelectorAll(".ff-m-val")[2].innerText.replace(" Hours", "");
+
+        taskModal.style.display = "flex";
+
+    });
+
+}
+const existingTasks = document.querySelectorAll(".ff-task-profile-card");
+
+existingTasks.forEach(function (task) {
+    attachTaskEvents(task);
+});
 // =========================================
 // SAVE TASK
 // =========================================
@@ -46,7 +88,23 @@ saveTaskBtn.addEventListener("click", function () {
     const taskContainer = document.getElementById("taskContainer");
     if (editingTask !== null) {
 
-    alert("Updating existing task...");
+    editingTask.querySelector(".ff-task-card-title").innerText = taskName;
+
+    editingTask.querySelectorAll(".ff-m-val")[0].innerText = taskDate;
+
+    editingTask.querySelectorAll(".ff-m-val")[1].innerText = taskPriority;
+
+    editingTask.querySelectorAll(".ff-m-val")[2].innerText =
+        taskTime + " Hours";
+
+    editingTask = null;
+
+    taskModal.style.display = "none";
+
+    document.getElementById("taskName").value = "";
+    document.getElementById("taskDate").value = "";
+    document.getElementById("taskPriority").selectedIndex = 0;
+    document.getElementById("taskTime").value = "";
 
     return;
 
@@ -94,34 +152,17 @@ newTask.innerHTML = `
 `;
 
 taskContainer.appendChild(newTask);
-const deleteBtn = newTask.querySelector(".ff-btn-delete");
-
-deleteBtn.addEventListener("click", function () {
-
-    const confirmDelete = confirm(
-        "Are you sure you want to delete this task?"
-    );
-
-    if (confirmDelete) {
-        newTask.remove();
-    }
-    
-});
-const editBtn = newTask.querySelector(".ff-btn-edit");
-
-editBtn.addEventListener("click", function () {
-
-    editingTask = newTask;
-
-    alert("Edit button clicked!");
 
 
-});
+// Attach Edit & Delete functionality
+attachTaskEvents(newTask);
+
+// Close modal
 taskModal.style.display = "none";
 
+// Reset form
 document.getElementById("taskName").value = "";
 document.getElementById("taskDate").value = "";
 document.getElementById("taskPriority").selectedIndex = 0;
 document.getElementById("taskTime").value = "";
-
 });
