@@ -1,0 +1,28 @@
+{
+  "name": "focusflow",
+  "version": "1.0.0",
+  "description": "FocusFlow AI is an AI-powered productivity assistant that helps users manage tasks, habits, and schedules using Google Gemini.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AvniRaj0/focusflow-ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AvniRaj0/focusflow-ai/issues"
+  },
+  "homepage": "https://github.com/AvniRaj0/focusflow-ai#readme",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
+}
