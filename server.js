@@ -58,6 +58,109 @@ app.post("/generate-plan", async (req, res) => {
     }
 
 });
+// =========================================
+// AI COACH
+// =========================================
+
+app.post("/generate-coach", async (req, res) => {
+
+    try {
+
+        const prompt = `
+You are an AI productivity coach.
+
+Return ONLY valid JSON.
+
+{
+  "plan": [
+    "",
+    "",
+    ""
+  ],
+  "avoidance": {
+    "task": "",
+    "count": "",
+    "reason": ""
+  },
+  "reasoning": [
+    "",
+    "",
+    ""
+  ],
+  "confidence": 85,
+  "risk": "",
+  "confidenceReason": ""
+}
+
+The student is studying:
+- DBMS
+- DSA
+- Hackathon
+
+Rules:
+
+- Return EXACTLY 3 plan items.
+- Each plan item must contain LESS THAN 6 WORDS.
+
+- Return EXACTLY 3 reasoning points.
+- Each reasoning point must contain LESS THAN 12 WORDS.
+
+- Avoidance task must contain LESS THAN 5 WORDS.
+
+- Avoidance count should ONLY be a number.
+Example:
+"count":"4"
+
+- Avoidance reason must contain LESS THAN 10 WORDS.
+
+- Confidence must be an integer between 70 and 100.
+
+- Risk must ONLY be:
+Low
+Medium
+High
+
+- Confidence reason must contain LESS THAN 10 WORDS.
+
+Return ONLY valid JSON.
+`;
+
+        const result = await model.generateContent(prompt);
+
+        const response = await result.response;
+
+        
+
+        const text = response.text();
+
+const cleanText = text
+    .replace(/```json/g, "")
+    .replace(/```/g, "")
+    .trim();
+
+res.json({
+
+    success: true,
+
+    coach: JSON.parse(cleanText)
+
+});
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+
+            success: false,
+
+            message: error.message
+
+        });
+
+    }
+
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

@@ -1068,3 +1068,14 @@ body {
     box-shadow: 0 12px 28px rgba(139,92,246,.35);
 
 }
+.ff-risk-alert-low{
+    color:#22c55e;
+}
+
+.ff-risk-alert-medium{
+    color:#f59e0b;
+}
+
+.ff-risk-alert-high{
+    color:#ef4444;
+}

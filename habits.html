@@ -19,7 +19,7 @@
                 <span class="ff-brand-text">FocusFlow</span>
             </div>
             <nav class="ff-nav-menu">
-                <a href="index.html" class="ff-nav-item">
+                <a href="dashboard.html" class="ff-nav-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
                     <span>Dashboard</span>
                 </a>
@@ -114,9 +114,51 @@
 
             <!-- Add Element Action Container -->
             <div class="ff-bottom-action-hub">
-                <button class="ff-btn-action ff-btn-accent ff-btn-wide">ADD HABIT</button>
+                <button id="addHabitBtn" class="ff-btn-action ff-btn-accent ff-btn-wide">
+    ADD HABIT
+</button>
             </div>
         </main>
     </div>
+    <!-- ========================================= -->
+<!-- ADD HABIT MODAL -->
+<!-- ========================================= -->
+
+<div id="addHabitModal" class="ff-modal">
+
+    <div class="ff-modal-content">
+
+        <span id="closeHabitModal" class="ff-close">&times;</span>
+
+        <h2>Add New Habit</h2>
+
+        <input
+            id="habitName"
+            type="text"
+            placeholder="Habit Name">
+
+        <input
+            id="habitGoal"
+            type="text"
+            placeholder="Goal (e.g. 3 Questions Daily)">
+
+        <input
+            id="habitTarget"
+            type="text"
+            placeholder="Today's Target">
+
+        <input
+            id="habitSuggestion"
+            type="text"
+            placeholder="AI Suggestion">
+
+        <button id="saveHabitBtn">
+            SAVE HABIT
+        </button>
+
+    </div>
+
+</div>
+    <script src="habits.js"></script>
 </body>
 </html>
