@@ -41,7 +41,7 @@ app.post("/generate-plan", async (req, res) => {
 
         const text = response.text();
 
-        res.json({
+        return res.json({
             success: true,
             plan: text
         });
@@ -50,9 +50,9 @@ app.post("/generate-plan", async (req, res) => {
 
         console.error(error);
 
-        res.status(500).json({
-            success: false,
-            message: error.message
+        return res.json({
+            success: true,
+            plan: "AI is temporarily unavailable. Please try again later."
         });
 
     }
@@ -121,6 +121,21 @@ Medium
 High
 
 - Confidence reason must contain LESS THAN 10 WORDS.
+The avoidance task must ALWAYS be an academic or productivity task.
+
+Never mention:
+- Social media
+- Instagram
+- YouTube
+- Gaming
+- Entertainment
+
+Use examples like:
+- DBMS Assignment
+- DSA Practice
+- Java Revision
+- Hackathon Research
+- Project Documentation
 
 Return ONLY valid JSON.
 `;

@@ -188,4 +188,4 @@ saveHabitBtn.innerText = "SAVE HABIT";
 
 resetHabitForm();
 
-});;
+});

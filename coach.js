@@ -45,6 +45,10 @@ Generate productivity advice for a student who is studying DBMS, DSA and working
         });
 
         const data = await response.json();
+        if (!data.success) {
+    alert(data.message);
+    return;
+}
 
         const coach = data.coach;
 

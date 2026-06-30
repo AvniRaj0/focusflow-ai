@@ -20,7 +20,22 @@ generatePlanBtn.addEventListener("click", async function () {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                prompt: "Create a productivity plan for today for a student with DBMS, DSA and Hackathon tasks."
+                prompt: `
+Create today's study plan.
+
+Tasks:
+- DBMS
+- DSA
+- Hackathon
+
+Rules:
+- Exactly 5 bullet points.
+- Under 8 words per bullet.
+- One motivational sentence at the end.
+- No paragraphs.
+- No headings.
+- Maximum 50 words.
+`
             })
         });
 

@@ -36,8 +36,9 @@ function attachTaskEvents(taskCard) {
         const confirmDelete = confirm("Are you sure you want to delete this task?");
 
         if (confirmDelete) {
-            taskCard.remove();
-        }
+    taskCard.remove();
+    saveTasks();
+}
 
     });
 
@@ -67,6 +68,7 @@ const existingTasks = document.querySelectorAll(".ff-task-profile-card");
 existingTasks.forEach(function (task) {
     attachTaskEvents(task);
 });
+saveTasks();
 // =========================================
 // SAVE TASK
 // =========================================
@@ -94,8 +96,12 @@ saveTaskBtn.addEventListener("click", function () {
 
     editingTask.querySelectorAll(".ff-m-val")[1].innerText = taskPriority;
 
-    editingTask.querySelectorAll(".ff-m-val")[2].innerText =
-        taskTime + " Hours";
+   editingTask.querySelectorAll(".ff-m-val")[2].innerText =
+    taskTime + " Hours";
+
+saveTasks();
+
+editingTask = null;
 
     editingTask = null;
 
@@ -157,6 +163,8 @@ taskContainer.appendChild(newTask);
 // Attach Edit & Delete functionality
 attachTaskEvents(newTask);
 
+// Save all tasks
+saveTasks();
 // Close modal
 taskModal.style.display = "none";
 
@@ -166,3 +174,30 @@ document.getElementById("taskDate").value = "";
 document.getElementById("taskPriority").selectedIndex = 0;
 document.getElementById("taskTime").value = "";
 });
+// =========================================
+// SAVE TASKS
+// =========================================
+
+function saveTasks() {
+
+    const allTasks = [];
+
+    document.querySelectorAll(".ff-task-profile-card").forEach(function(card){
+
+        allTasks.push({
+
+            title: card.querySelector(".ff-task-card-title").innerText,
+
+            due: card.querySelectorAll(".ff-m-val")[0].innerText,
+
+            priority: card.querySelectorAll(".ff-m-val")[1].innerText,
+
+            time: card.querySelectorAll(".ff-m-val")[2].innerText
+
+        });
+
+    });
+
+    localStorage.setItem("focusflowTasks", JSON.stringify(allTasks));
+
+}
